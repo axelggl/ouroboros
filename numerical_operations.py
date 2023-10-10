@@ -19,6 +19,8 @@ def square(a):
     return res
 
 def modulo(a, b):
+    if b == 0:
+        return 0
     res = a % b
     return res
 
