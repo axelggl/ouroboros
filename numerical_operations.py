@@ -29,5 +29,7 @@ def divide(a, b):
     return res
 
 def integer_division(a, b):
+    if b == 0:
+        return 0
     res = a // b
     return res
