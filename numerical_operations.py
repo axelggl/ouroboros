@@ -17,3 +17,17 @@ def power(a, b):
 def square(a):
     res = a ** 2
     return res
+
+def modulo(a, b):
+    res = a % b
+    return res
+
+def divide(a, b):
+    if b == 0:
+        return 0
+    res = a / b
+    return res
+
+def integer_division(a, b):
+    res = a // b
+    return res
