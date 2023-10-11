@@ -26,8 +26,7 @@ def create_recipe_v2(title, persons, *ingredients, **tags):
     if persons > 1000:
         raise ValueError("Too many persons")
     if ingredients == None:
-        raise ValueError("This recipe has no ingredients")
-    if 
+        raise ValueError("This recipe has no ingredients") 
     
     return {
         'title': title,
