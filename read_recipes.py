@@ -9,6 +9,7 @@ def get_recipes(file_name):
         print(f"File '{file_name}' not found.")
     except json.JSONDecodeError:
         print(f"Error decoding JSON in '{file_name}'.")
+        return []
     except OSError:
         print(f"File '{file_name} not found.'")
-    return []
+        return []
