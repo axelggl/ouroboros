@@ -25,7 +25,7 @@ def create_recipe_v2(title, persons, *ingredients, **tags):
 
     # Check ingredients
     if not ingredients or ingredients[0] is None:
-        raise ValueError("Ingredient list cannot be empty")
+        raise ValueError("This recipe has no ingredient")
     
     # Return the recipe as a dictionary
     return {
