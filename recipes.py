@@ -15,19 +15,19 @@ def create_recipe(name, persons, ingredients):
     return recipe_data
 
 def create_recipe_v2(title, persons, *ingredients, **tags):
-    if len(title) > 40:
+    # Check title length
+    if len(title) > 40 or len(title) == None:
         raise ValueError("Title is too long")
-    if len(title) == None:
-        raise ValueError("Invalid title")
-    if persons <= 0:
+
+    # Check persons
+    if persons <= 0 or persons > 20 or persons == None:
         raise ValueError("Invalid persons number")
-    if persons == None:
-        raise ValueError('Invalid number of people')
-    if persons > 1000:
-        raise ValueError("Too many persons")
-    if ingredients == None:
-        raise ValueError("This recipe has no ingredients") 
-    
+
+    # Check ingredients
+    if not ingredients or ingredients == None:
+        raise ValueError("Ingredient list cannot be empty")
+
+    # Return the recipe as a dictionary
     return {
         'title': title,
         'persons': persons,
