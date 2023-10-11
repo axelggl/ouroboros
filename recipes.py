@@ -16,7 +16,7 @@ def create_recipe(name, persons, ingredients):
 
 def create_recipe_v2(title, persons, *ingredients, **tags):
     # Check title length
-    if len(title) > 40 or title is None:
+    if len(title) > 40:
         raise ValueError("Title is too long")
 
     # Check persons
@@ -24,9 +24,9 @@ def create_recipe_v2(title, persons, *ingredients, **tags):
         raise ValueError("Invalid persons number")
 
     # Check ingredients
-    if not ingredients or ingredients[0] is None:
+    if not ingredients or any(ing is None for ing in ingredients):
         raise ValueError("This recipe has no ingredients")
-    
+
     # Return the recipe as a dictionary
     return {
         'title': title,
