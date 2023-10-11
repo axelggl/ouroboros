@@ -16,7 +16,7 @@ def create_recipe(name, persons, ingredients):
 
 def create_recipe_v2(title, persons, *ingredients, **tags):
     # Check title length
-    if len(title) > 40:
+    if len(title) > 40 or any(t is None for t in title):
         raise ValueError("Title is too long")
 
     # Check persons
