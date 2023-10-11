@@ -7,9 +7,9 @@ def create_recipe(name, persons, ingredients):
         raise ValueError("This recipe has no ingredients")
 
     recipe_data = {
-        'title' = name,
-        'persons' = persons,
-        'ingredients' = ingredients
-    }
+        'title': name,
+        'persons': persons,
+        'ingredients': ingredients
+        }
 
     return recipe_data
