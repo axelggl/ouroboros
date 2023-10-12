@@ -16,8 +16,18 @@ class Spaceship:
         """
         if damage < 0:
             raise ValueError("Damage cannot be negative.")
-        
+
         self.defense -= damage
         if self.defense <= 0:
             self.defense = 0
             self.is_alive = False
+
+class Battleship(Spaceship):
+    """
+    A class representing a battleship, inheriting from Spaceship.
+    """
+
+class Fighter(Spaceship):
+    """
+    A class representing a fighter, inheriting from Spaceship.
+    """
