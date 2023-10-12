@@ -6,6 +6,14 @@ class Spaceship:
         self.defense = defense
 
     def take_damages(self, damage):
+        """
+        Apply damage to the spaceship's defense.
+
+        :param damage: The amount of damage to apply.
+        :type damage: int
+
+        :raises ValueError: If damage is negative.
+        """
         if damage < 0:
             raise ValueError("Damage cannot be negative.")
 
