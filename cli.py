@@ -1,35 +1,26 @@
 import argparse
-import datetime
 import json
+import datetime as dt
 
-from datetime_utils import format_date
-from menu import build_menu
-from filter_recipes import filter_recipes
 from sort_list import sort_recipes
-from read_recipes import get_recipes
+from filter_recipes import filter_recipes
+from menu import build_menu
+from datetime_utils import parse_time
+from menu import save_menu
 
-# Parse command-line arguments
-parser = argparse.ArgumentParser(description="Generate a menu from recipes data.")
-parser.add_argument("--start", "-s", required=True, help="Start date (format: dd/mm/yyyy)")
+parser = argparse.ArgumentParser(description="Create a menu from recipes")
+parser.add_argument("--start", "-s", required=True, help="Start date (format: DD/MM/YYYY)")
 parser.add_argument("--max-persons", "-p", type=int, default=4, help="Maximum number of persons for recipes")
 args = parser.parse_args()
 
-# Load recipes data from recipes_data.json
-with open("recipes_data.json", "r") as recipes_file:
-    recipes_data = json.load(recipes_file)
+with open('recipes_data.json', 'r', encoding='utf-8') as file:
+    recipes = json.load(file)
 
-# Parse the start date
-start_date = format_date(args.start)
-
-# Sort recipes by title
-sorted_recipes = sort_recipes(recipes_data, "title")
-
-# Filter recipes by maximum persons
+sorted_recipes = sort_recipes(recipes, 'title')
 filtered_recipes = filter_recipes(sorted_recipes, args.max_persons)
+format_date = parse_time(args.start)
+menu_content = build_menu(filtered_recipes, format_date)
 
-# Generate the menu
-menu = build_menu(start_date, filtered_recipes)
+save_menu(menu_content)
 
-# Write the menu to menu.txt
-with open("menu.txt", "w") as menu_file:
-    menu_file.write(menu)
+print("Menu generated and saved in menu.txt")
