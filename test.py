@@ -1,7 +1,13 @@
 from base_spaceships import Spaceship
 
 if __name__ == '__main__':
-    uss_enterprise = Spaceship(attack=100, defense=1500)
-    uss_enterprise.take_damages(2000)
-    print(uss_enterprise.defense)
-    print(uss_enterprise.is_alive)
+    tie_fighter = Spaceship(50, 300)
+    millennium_falcon = Spaceship(350, 900)
+    
+    tie_fighter.fire_on(millennium_falcon)
+    print(millennium_falcon.defense)
+    print(millennium_falcon.is_alive)
+    
+    millennium_falcon.fire_on(tie_fighter)
+    print(tie_fighter.defense)
+    print(tie_fighter.is_alive)

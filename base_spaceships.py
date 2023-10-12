@@ -21,6 +21,16 @@ class Spaceship:
         if self.defense <= 0:
             self.defense = 0
             self.is_alive = False
+            
+    def fire_on(self, target_spaceship):
+        """
+        Apply damage to the target spaceship based on the attacker's attack attribute.
+
+        :param target_spaceship: The spaceship to be targeted.
+        :type target_spaceship: Spaceship
+        """
+        target_spaceship.take_damages(self.attack)
+        
 
 class Battleship(Spaceship):
     """
