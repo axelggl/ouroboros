@@ -1,7 +1,7 @@
 class Spaceship:
     is_alive = True
 
-    def init(self, attack=0, defense=0):
+    def __init__(self, attack=0, defense=0):
         self.attack = attack
         self.defense = defense
 
@@ -16,7 +16,7 @@ class Spaceship:
         """
         if damage < 0:
             raise ValueError("Damage cannot be negative.")
-
+        
         self.defense -= damage
         if self.defense <= 0:
             self.defense = 0
