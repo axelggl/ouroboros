@@ -33,11 +33,9 @@ class Spaceship:
         
 
 class Battleship(Spaceship):
-    """
-    A class representing a battleship, inheriting from Spaceship.
-    """
+    def __init__(self, attack=0, defense=0):
+        super().__init__(attack, defense)
 
 class Fighter(Spaceship):
-    """
-    A class representing a fighter, inheriting from Spaceship.
-    """
+    def __init__(self, attack=0, defense=0):
+        super().__init__(attack, defense)
