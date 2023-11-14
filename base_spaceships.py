@@ -2,6 +2,7 @@ from requirements import Requirements
 
 class Spaceship:
     is_alive = True
+    requirements = Requirements(0, 0)
 
     def __init__(self, attack=0, defense=0):
         self.attack = attack
