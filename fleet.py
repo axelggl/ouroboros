@@ -43,3 +43,11 @@ class Fleet:
     @property
     def report(self):
         return self.get_report()
+
+    def __add__(self, new_ships):
+        if isinstance(new_ships, Spaceship):
+            self.ships.append(new_ships)
+        elif isinstance(new_ships, list):
+            self.ships.extend(new_ships)
+        else:
+            raise TypeError("Error.")
