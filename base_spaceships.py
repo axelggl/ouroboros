@@ -1,3 +1,5 @@
+from requirements import Requirements
+
 class Spaceship:
     is_alive = True
 
