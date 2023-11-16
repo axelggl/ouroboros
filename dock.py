@@ -1,5 +1,10 @@
 from spaceships import Interceptor, Frigate
 
+class Fleet:
+    def __init__(self, name, ships):
+        self.name = name
+        self.ships = ships
+
 class SpaceDock:
     def __init__(self) -> None:
         self.fleets = {'default': Fleet('default', [])}
