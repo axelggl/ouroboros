@@ -1,9 +1,4 @@
-from spaceships import Interceptor, Frigate
-
-class Fleet:
-    def __init__(self, name, ships):
-        self.name = name
-        self.ships = ships
+from fleet import Fleet
 
 class SpaceDock:
     def __init__(self) -> None:
