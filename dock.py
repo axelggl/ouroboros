@@ -16,6 +16,8 @@ class SpaceDock:
     def __delitem__(self, name):
         if name in self.fleets:
             del self.fleets[name]
+        else :
+            raise ValueError
 
     def __str__(self):
         result = []
